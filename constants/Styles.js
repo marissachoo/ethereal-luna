@@ -40,4 +40,9 @@ export default {
       fontSize: 15,
       color: '#FFFFFF'
     },
+    center: {
+      flex:1,
+      justifyContent:'center',
+      alignItems: 'center'
+    },
 };
