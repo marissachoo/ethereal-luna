@@ -3,6 +3,18 @@ const tintColor = '#2f95dc';
 import Colors from './Colors';
 
 export default {
+    fab: {
+      position: 'absolute',
+      width: 56,
+      height: 56,
+      alignItems: 'center',
+      justifyContent: 'center',
+      right: 20,
+      bottom: 20,
+      backgroundColor: Colors.primaryColor,
+      borderRadius: 30,
+      elevation: 8
+    },
     roundedButton: {
         width: 300,
         flexDirection: 'row',

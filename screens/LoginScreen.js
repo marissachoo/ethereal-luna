@@ -27,7 +27,7 @@ export default class LoginScreen extends React.Component {
     //   .then(() => this.props.navigation.navigate('Main'))
     //   .catch(error => this.setState({ errorMessage: error.message }))
     // console.log('handleLogin')
-    this.props.navigation.navigate('Home')
+    this.props.navigation.navigate('Root')
   }
 
   handleGoogleLogin = async () => {
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: Colors.secondaryColor
   },
   logoContainer:{
     flex: 1,
@@ -112,7 +113,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: Layout.window.width,
-    marginBottom: 20,
   },
   logo: {
     width: 280,
