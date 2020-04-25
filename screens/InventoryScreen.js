@@ -6,10 +6,48 @@ import Layout from '../constants/Layout';
 import { Ionicons } from '@expo/vector-icons';
 
 export default class InventoryScreen extends React.Component {
+  state = {
+
+  }
+
+
+  fetchOrders = () => {
+    console.log('Fetching orders')
+    this.unsubscribe = firebase.firestore().collection('orders').onSnapshot(snapshot => {
+        snapshot.docChanges.forEach(change => {
+            if (change.type === "added") {
+                console.log('Exist')
+                const order = change.doc.data();
+                console.log(order)
+                let newState = {};
+                const day = order.time.toDate().getDay() ? 'saturday' : 'sunday';
+                const hour = order.time.toDate().getHours();
+                newState[day] = [...this.state[day]];
+                newState[day][`${hour - 7}`].orderCount += 1;
+                this.setState(newState);
+                console.log('Added')
+            }
+            if (change.type === "modified") {
+                //console.log("Modified city: ", change.doc.data());
+            }
+            if (change.type === "removed") {
+                console.log("Removed city: ", change.doc.data());
+            }
+        });
+    });
+  }
+
+  extractItemKey = (item) => `${item.key}`;
+
   render() {
     return (
       <View style={styles.container}>
-        <FlatList contentContainerStyle={{}} style={{width: Layout.window.width}}
+        <FlatList 
+          contentContainerStyle={{}}
+          style={{width: Layout.window.width}}
+          keyExtractor={this.extractItemKey}
+
+
           data={[
             {
               key: "0",
