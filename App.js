@@ -6,9 +6,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
+import RequestsScreen from './screens/RequestsScreen';
 
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
+import RequestsStackNavigator from './navigation/RequestsStackNavigator';
 
 const Stack = createStackNavigator();
 console.disableYellowBox = true;
@@ -58,7 +60,7 @@ export default function App(props) {
             <Stack.Screen 
               name="Login"
               component={LoginScreen} />
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="Root" component={RequestsStackNavigator} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
