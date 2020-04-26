@@ -72,18 +72,20 @@ Food Donor Management App. Prevent fraud & corruption and ease the distribution 
 ### Tech Stack
 React Native is used for the app with `React Native Web` enabled. Hence, it available in all platform, web, android, and IOS.
 
-The PWA app is hosted using *Firebase Hosting* and can be accessed at <a href="https://beforetea-2821a.web.app/">Web Demo</a>.
+The PWA app is hosted using **Firebase Hosting** and can be accessed at <a href="https://beforetea-2821a.web.app/">Web Demo</a>.
 
 Firebase Cloud Firestore is used as the database.
 
 ### Designs/Preview
 
-*Admin Side*
-<img src="/assets/images/admin-side.jpeg" alt="Admin Side Design Preview" width="300">
+**Admin Side**
+
+<img src="/assets/images/admin-side.jpeg" alt="Admin Side Design Preview" width="600">
 
 
-*Volunteer Side*
-<img src="/assets/images/volunteer-side.jpeg" alt="Admin Side Design Preview" width="300">
+**Volunteer Side**
+
+<img src="/assets/images/volunteer-side.jpeg" alt="Admin Side Design Preview" width="600">
 
 <!-- CONTRIBUTING -->
 ## Contributing
