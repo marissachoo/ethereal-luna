@@ -60,7 +60,8 @@ export default function App(props) {
             <Stack.Screen 
               name="Login"
               component={LoginScreen} />
-            <Stack.Screen name="Root" component={RequestsStackNavigator} />
+            <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="VolunteerRoot" component={RequestsStackNavigator} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

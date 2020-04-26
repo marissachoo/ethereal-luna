@@ -17,7 +17,7 @@ export default class LoginScreen extends React.Component {
     header: null
   };
 
-  state = { email: 'some@ngo@email.com', password: 'password', errorMessage: null }
+  state = { email: 'admin@ngo.com', password: 'password', errorMessage: null }
 
   handleLogin = () => {
     // TODO: Firebase stuff...
@@ -27,7 +27,8 @@ export default class LoginScreen extends React.Component {
     //   .then(() => this.props.navigation.navigate('Main'))
     //   .catch(error => this.setState({ errorMessage: error.message }))
     // console.log('handleLogin')
-    this.props.navigation.navigate('Root')
+    const dest = this.state.email == "admin@ngo.com" ? "Root" : "VolunteerRoot";
+    this.props.navigation.navigate(dest)
   }
 
   handleGoogleLogin = async () => {
