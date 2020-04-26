@@ -26,11 +26,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-An app that generates a 2D platform game based on a given hand-drawn sketch.
+Food Donor Management App to help food aid NGOs. Prevent fraud & corruption and ease the distribution process..
 
 ### Built With
 
-* [React Native](https://facebook.github.io/react-native/)
+* [React Native](https://facebook.github.io/react-native/) (with react-native-web enabled)
 * [Firebase](https://firebase.google.com/)
 * [Expo](https://expo.io/)
 
@@ -68,6 +68,22 @@ $ yarn start
 ## Documentation
 
 Food Donor Management App. Prevent fraud & corruption and ease the distribution process.
+
+### Tech Stack
+React Native is used for the app with `React Native Web` enabled. Hence, it available in all platform, web, android, and IOS.
+
+The PWA app is hosted using *Firebase Hosting* and can be accessed at <a href="https://beforetea-2821a.web.app/">Web Demo</a>.
+
+Firebase Cloud Firestore is used as the database.
+
+### Designs/Preview
+
+*Admin Side*
+<img src="/assets/images/admin-side.jpeg" alt="Admin Side Design Preview" width="300">
+
+
+*Volunteer Side*
+<img src="/assets/images/volunteer-side.jpeg" alt="Admin Side Design Preview" width="300">
 
 <!-- CONTRIBUTING -->
 ## Contributing
