@@ -99,6 +99,7 @@ export default class RecipientFormScreen extends Component {
         phone: this.state.phone,
         address: this.state.address,
         familyMembers: this.state.familyMembers,
+        status: "ongoing",
         volunteer: {
           id: "34509",
           name: "David Lee"

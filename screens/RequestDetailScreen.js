@@ -82,6 +82,9 @@ export default class RequestDetailScreen extends Component {
           <Text style={{fontSize: 20}}>{familyMembers} people</Text>
         </View>
         <View style={[Styles.center, {marginTop: 60}]}>
+          <TouchableOpacity onPress={()=>{}} style={Styles.roundedButton}>
+            <Text style={Styles.buttonText}>Add Photo Proof</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={this.completeDelivery} style={Styles.roundedButton}>
             <Text style={Styles.buttonText}>Complete Delivery</Text>
           </TouchableOpacity>
