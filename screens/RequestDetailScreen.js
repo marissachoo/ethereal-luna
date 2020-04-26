@@ -23,11 +23,33 @@ export default class RequestDetailScreen extends Component {
     address: "",
     familyMembers: 0,
     status: "",
-    volunteer: {}
+    volunteer: {},
+    loading: false,
   };
 
   deleteItem = (id) => () => {
     firebase.firestore().collection('recipients').doc(id).delete();
+  }
+
+  completeDelivery = async () => {
+    let { key } = this.props.route.params;
+
+    try {
+      this.setState({loading: true});
+
+      await firebase.firestore().collection('recipients').doc(key).set({
+        status: 'delivered'
+      },{ merge: true })
+      console.log("Saved to firebase");
+      this.props.navigation.navigate('Complete')
+    } catch (e) {
+      console.log({ e });
+      alert('Update failed, sorry :(');
+    } finally {
+      this.setState({
+        loading: false
+      });
+    }
   }
 
   render() {
@@ -36,8 +58,6 @@ export default class RequestDetailScreen extends Component {
     let {
       key, name, phone, address, familyMembers, status, volunteer
     } = this.props.route.params;
-
-    
 
     return (
       <ScrollView>
@@ -62,7 +82,7 @@ export default class RequestDetailScreen extends Component {
           <Text style={{fontSize: 20}}>{familyMembers} people</Text>
         </View>
         <View style={[Styles.center, {marginTop: 60}]}>
-          <TouchableOpacity onPress={() => this.props.navigation.push("Complete", {key})} style={Styles.roundedButton}>
+          <TouchableOpacity onPress={this.completeDelivery} style={Styles.roundedButton}>
             <Text style={Styles.buttonText}>Complete Delivery</Text>
           </TouchableOpacity>
         </View>

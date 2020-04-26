@@ -12,12 +12,17 @@ function Item({id, name, phone, address, familyMembers, status, volunteer, onPre
       <View style={styles.itemContainer}>
         <Text style={{fontSize: 26}}>{name} </Text>
         <Text style={{fontSize: 18}}>{phone}</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 8}}>
-          <Text style={{fontSize: 18}}>Volunteer:  {volunteer.name}</Text>
-          <Text style={{fontSize: 18}}> {status.toUpperCase()}</Text>
+        <View style={{marginVertical: 20}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', }}>
+            <Text style={{fontSize: 18}}>Bread</Text>
+            <Text style={{fontSize: 18}}> 2 pack</Text>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', }}>
+            <Text style={{fontSize: 18}}>Rice</Text>
+            <Text style={{fontSize: 18}}> 7 kg</Text>
+          </View>
         </View>
-        
-        <Ionicons onPress={onDelete} name="md-trash" size={32} color="#141414" style={{top: 25, right: 5, position: 'absolute',marginTop: 5, marginHorizontal: 10}} />
+        <Text style={{fontSize: 18}}>Status: {status.toUpperCase()}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -111,8 +116,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderBottomColor: Colors.grayColor,
     borderBottomWidth: 1,
-    height: 130,
-    paddingHorizontal: 10
+    paddingHorizontal: 20,
+    paddingVertical: 20
   },
   fab: {
     position: 'absolute',

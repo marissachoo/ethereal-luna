@@ -31,28 +31,7 @@ export default class CompleteScreen extends React.Component {
     this.props.navigation.navigate('Root')
   }
 
-  completeDelivery = async () => {
-    let { key } = this.props.route.params;
-
-    try {
-      this.setState({loading: true});
-
-      await firebase.firestore().collection('recipients').doc(key).set({
-        status: 'confirmation'
-      },{ merge: true })
-      console.log("Saved to firebase");
-      this.props.navigation.navigate('Requests')
-    } catch (e) {
-      console.log({ e });
-      alert('Upload failed, sorry :(');
-    } finally {
-      this.setState({
-        loading: false
-      });
-    }
-
-    return 
-  }
+  
 
   render() {
     
@@ -69,7 +48,7 @@ export default class CompleteScreen extends React.Component {
 
           </View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity onPress={this.completeDelivery} style={Styles.roundedButton}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Requests')} style={Styles.roundedButton}>
               <Text style={Styles.buttonText}>You're Welcome</Text>
             </TouchableOpacity>
           </View>
