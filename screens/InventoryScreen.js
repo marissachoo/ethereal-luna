@@ -85,8 +85,11 @@ export default class InventoryScreen extends React.Component {
           data={this.state.inventory}
           renderItem={({ item }) => <Item {...item} onPress={this.itemHandler(item.game, item.image)} onDelete={this.deleteItem(item.id)} />}
         />
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate("Login")}} style={[Styles.fab2]}>
+          <Ionicons name="md-log-out" size={40} color={Colors.secondaryColor}></Ionicons>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => {this.props.navigation.push('InventoryForm')}} style={[Styles.fab]}>
-          <Ionicons name="md-add" size={20} color={Colors.secondaryColor}></Ionicons>
+          <Ionicons name="md-add" size={40} color={Colors.secondaryColor}></Ionicons>
         </TouchableOpacity>
       </View>
     );

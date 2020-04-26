@@ -15,6 +15,18 @@ export default {
       borderRadius: 30,
       elevation: 8
     },
+    fab2: {
+      position: 'absolute',
+      width: 56,
+      height: 56,
+      alignItems: 'center',
+      justifyContent: 'center',
+      right: 20,
+      bottom: 100,
+      backgroundColor: "#DC0000",
+      borderRadius: 30,
+      elevation: 8
+    },
     roundedButton: {
         width: 300,
         flexDirection: 'row',

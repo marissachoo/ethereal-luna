@@ -91,8 +91,11 @@ export default class RecipientsScreen extends React.Component {
           data={this.state.recipients}
           renderItem={({ item }) => <Item {...item} onPress={this.itemHandler(item)} onDelete={this.deleteItem(item.id)} />}
         />
-        <TouchableOpacity onPress={() => {}} style={[Styles.fab]}>
-          <Ionicons name="md-add" size={20} color={Colors.secondaryColor}></Ionicons>
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate("Login")}} style={[Styles.fab2]}>
+          <Ionicons name="md-log-out" size={40} color={Colors.secondaryColor}></Ionicons>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate("RecipientForm")}} style={[Styles.fab]}>
+          <Ionicons name="md-add" size={40} color={Colors.secondaryColor}></Ionicons>
         </TouchableOpacity>
       </View>
     );

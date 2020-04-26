@@ -7,6 +7,7 @@ import RecipientsScreen from '../screens/RecipientsScreen';
 import RecipientDetailScreen from '../screens/RecipientDetailScreen';
 import LinksScreen from '../screens/LinksScreen';
 import Colors from '../constants/Colors';
+import RecipientFormScreen from '../screens/RecipientFormScreen';
 
 const RecipientsStack = createStackNavigator();
 const INITIAL_ROUTE_NAME = 'Recipients';
@@ -33,6 +34,10 @@ export default function RecipientsStackNavigator({ navigation, route }) {
       <RecipientsStack.Screen
         name="RecipientDetail"
         component={RecipientDetailScreen}
+      />
+      <RecipientsStack.Screen
+        name="RecipientForm"
+        component={RecipientFormScreen}
       />
     </RecipientsStack.Navigator>
   );
