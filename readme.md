@@ -7,12 +7,14 @@
   <h3 align="center">BeforeTea</h3>
 
   <p align="center">
-    Hand-drawn Sketch Game Prototyping App.
+    Food Aid Management System
     <br />
     <a href="https://github.com/marissachoo/ethereal-luna"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://exp.host/@mfrashad/beforeTea">View Demo</a>
+    <a href="https://beforetea-2821a.web.app/">View Web Demo</a>
+    .
+    <a href="https://exp.host/@mfrashad/beforeTea">View App Demo</a>
     ·
     <a href="https://github.com/marissachoo/ethereal-luna/issues">Report Bug</a>
     ·
