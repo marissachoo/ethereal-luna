@@ -5,6 +5,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import InventoryScreen from '../screens/InventoryScreen';
 import InventoryStackNavigator from '../navigation/InventoryStackNavigator';
+import RecipientsStackNavigator from '../navigation/RecipientsStackNavigator';
 import LinksScreen from '../screens/LinksScreen';
 
 const BottomTab = createBottomTabNavigator();
@@ -27,8 +28,8 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="RecipientsStack"
+        component={RecipientsStackNavigator}
         options={{
           title: 'Recipient',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-people" />,
