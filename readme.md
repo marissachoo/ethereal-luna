@@ -88,8 +88,10 @@ Firebase Cloud Firestore is used as the database.
 <img src="/assets/images/volunteer-side.jpeg" alt="Admin Side Design Preview" width="600">
 
 ### Food Allocation AI model
-Tensorflow model to allocate weightage to food aid recipient based on household headcount and special needs (Warga Emas, Disease, OKU, etc).
+Tensorflow model to allocate weightage to food aid recipient based on household headcount and special needs (Warga Emas, Disease, OKU, etc).The model utilises k Nearest Neighbours (kNN) to allocate a family to a food package, each containing different amount of food to fulfill different families.
+
 The python script is located at root folder named `beforeTea_sort.py`. Data used for training is from Mid-Ohio food bank.
+The average accuracy of the model running only 50 data points (due to time constraints) is 80%. 
 
 Test Result:
 
