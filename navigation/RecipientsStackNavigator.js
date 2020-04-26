@@ -4,6 +4,7 @@ import * as React from 'react';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import RecipientsScreen from '../screens/RecipientsScreen';
+import RecipientDetailScreen from '../screens/RecipientDetailScreen';
 import LinksScreen from '../screens/LinksScreen';
 import Colors from '../constants/Colors';
 
@@ -28,6 +29,10 @@ export default function RecipientsStackNavigator({ navigation, route }) {
       <RecipientsStack.Screen
         name="Recipients"
         component={RecipientsScreen}
+      />
+      <RecipientsStack.Screen
+        name="RecipientDetail"
+        component={RecipientDetailScreen}
       />
     </RecipientsStack.Navigator>
   );

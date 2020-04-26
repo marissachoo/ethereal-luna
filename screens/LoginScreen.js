@@ -17,7 +17,7 @@ export default class LoginScreen extends React.Component {
     header: null
   };
 
-  state = { email: '', password: '', errorMessage: null }
+  state = { email: 'some@ngo@email.com', password: 'password', errorMessage: null }
 
   handleLogin = () => {
     // TODO: Firebase stuff...
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 280,
+    height: 280,
     resizeMode: 'contain',
   },
   logoSub: {

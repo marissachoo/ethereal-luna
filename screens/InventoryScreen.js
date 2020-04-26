@@ -10,8 +10,8 @@ function Item({item, food, amount, unit, onPress, onDelete}) {
   return (
     <TouchableOpacity>
       <View style={styles.itemContainer}>
-        <Text style={{fontWeight: '', fontSize: 22}}>{food} </Text>
-        <Text style={{fontWeight: '', fontSize: 22}}>{amount} {unit}</Text>
+        <Text style={{fontSize: 22}}>{food} </Text>
+        <Text style={{fontSize: 22}}>{amount} {unit}</Text>
         <Ionicons onPress={onDelete} name="md-trash" size={32} color="#141414" style={{marginTop: 5, marginHorizontal: 10}} />
       </View>
     </TouchableOpacity>
@@ -46,7 +46,7 @@ export default class InventoryScreen extends React.Component {
           if (change.type === "added") {
               console.log('exist')
               let item = change.doc.data();
-              item['id'] = change.doc.id
+              item['key'] = change.doc.id
               this.setState({inventory: [item, ...this.state.inventory], isLoading: false});
           }
           if (change.type === "modified") {

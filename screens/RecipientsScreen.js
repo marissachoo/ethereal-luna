@@ -8,7 +8,7 @@ import firebase from '../utils/firebase';
 
 function Item({id, name, phone, address, familyMembers, status, volunteer, onPress, onDelete}) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.itemContainer}>
         <Text style={{fontSize: 26}}>{name} </Text>
         <Text style={{fontSize: 18}}>{phone}</Text>
@@ -30,9 +30,9 @@ export default class RecipientsScreen extends React.Component {
   }
 
 
-  itemHandler = (item, image) => () => {
+  itemHandler = (item) => () => {
     console.log("handler", item);
-    this.props.navigation.navigate('item', { itemURL: item, imageURL: image })
+    this.props.navigation.push('RecipientDetail', item)
   }
 
   deleteItem = (id) => () => {
@@ -51,7 +51,7 @@ export default class RecipientsScreen extends React.Component {
           if (change.type === "added") {
               console.log('exist')
               let item = change.doc.data();
-              item['id'] = change.doc.id
+              item['key'] = change.doc.id
               this.setState({recipients: [item, ...this.state.recipients], isLoading: false});
           }
           if (change.type === "modified") {
@@ -89,7 +89,7 @@ export default class RecipientsScreen extends React.Component {
           style={{width: Layout.window.width}}
           keyExtractor={this.extractItemKey}
           data={this.state.recipients}
-          renderItem={({ item }) => <Item {...item} onPress={this.itemHandler(item.game, item.image)} onDelete={this.deleteItem(item.id)} />}
+          renderItem={({ item }) => <Item {...item} onPress={this.itemHandler(item)} onDelete={this.deleteItem(item.id)} />}
         />
         <TouchableOpacity onPress={() => {}} style={[Styles.fab]}>
           <Ionicons name="md-add" size={20} color={Colors.secondaryColor}></Ionicons>
