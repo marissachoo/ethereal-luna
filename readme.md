@@ -88,8 +88,8 @@ Firebase Cloud Firestore is used as the database.
 <img src="/assets/images/volunteer-side.jpeg" alt="Admin Side Design Preview" width="600">
 
 ### Food Allocation AI model
-Tensorflow model to allocate weightage to food aid recipient based on household headcount and special needs (Disease, OKU, etc).
-The python script is located at root folder named `beforeTea_sort.py`. The Ohio foodbank dataset is used.
+Tensorflow model to allocate weightage to food aid recipient based on household headcount and special needs (Warga Emas, Disease, OKU, etc).
+The python script is located at root folder named `beforeTea_sort.py`. Data used for training is from Mid-Ohio food bank.
 
 Test Result:
 
