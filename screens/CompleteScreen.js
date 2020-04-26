@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image, TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 // import * as Google from 'expo-google-app-auth';
-// import firebase from '../utils/firebase';
+import firebase from '../utils/firebase';
 
 import Layout from '../constants/Layout';
 import Styles from '../constants/Styles';
@@ -17,7 +17,8 @@ export default class CompleteScreen extends React.Component {
     header: null
   };
 
-  state = { email: 'some@ngo@email.com', password: 'password', errorMessage: null }
+  state = { loading: false }
+  
 
   handleLogin = () => {
     // TODO: Firebase stuff...
@@ -30,24 +31,31 @@ export default class CompleteScreen extends React.Component {
     this.props.navigation.navigate('Root')
   }
 
-  handleGoogleLogin = async () => {
-    // const { type, accessToken, user } = await Google.logInAsync({
-    //   androidClientId: `511972229703-33j15238kl5rc4j4rjermgv46meu27m4.apps.googleusercontent.com`,
-    // });
-    
-    // switch (type) {
-    //   case 'success': {
-    //     await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    //     const credential = new firebase.auth.GoogleAuthProvider.credential(accessToken);
-    //     this.props.navigation.navigate('Main')
-    //   }
-    //   case 'cancel': {
-    //     this.setState({ errorMessage: "Cancelled" })
-    //   }
-    // }
+  completeDelivery = async () => {
+    let { key } = this.props.route.params;
+
+    try {
+      this.setState({loading: true});
+
+      await firebase.firestore().collection('recipients').doc(key).set({
+        status: 'confirmation'
+      },{ merge: true })
+      console.log("Saved to firebase");
+      this.props.navigation.navigate('Requests')
+    } catch (e) {
+      console.log({ e });
+      alert('Upload failed, sorry :(');
+    } finally {
+      this.setState({
+        loading: false
+      });
+    }
+
+    return 
   }
 
   render() {
+    
     return (
       <View style={{flex:1}}>
         <View style={styles.logoContainer}>
@@ -61,7 +69,7 @@ export default class CompleteScreen extends React.Component {
 
           </View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Requests')} style={Styles.roundedButton}>
+            <TouchableOpacity onPress={this.completeDelivery} style={Styles.roundedButton}>
               <Text style={Styles.buttonText}>You're Welcome</Text>
             </TouchableOpacity>
           </View>
