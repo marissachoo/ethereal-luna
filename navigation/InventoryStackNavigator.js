@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import InventoryScreen from '../screens/InventoryScreen';
 import LinksScreen from '../screens/LinksScreen';
 import Colors from '../constants/Colors';
+import InventoryFormScreen from '../screens/InventoryFormScreen';
 
 const InventoryStack = createStackNavigator();
 const INITIAL_ROUTE_NAME = 'Inventory';
@@ -28,6 +29,10 @@ export default function InventoryStackNavigator({ navigation, route }) {
       <InventoryStack.Screen
         name="Inventory"
         component={InventoryScreen}
+      />
+      <InventoryStack.Screen
+        name="InventoryForm"
+        component={InventoryFormScreen}
       />
     </InventoryStack.Navigator>
   );
