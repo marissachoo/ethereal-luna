@@ -94,7 +94,7 @@ export default class RecipientFormScreen extends Component {
   createRecipient = async () => {
     try {
       this.setState({loading: true});
-      await firebase.firestore().collection('inventory').add({
+      await firebase.firestore().collection('recipients').add({
         name: this.state.name,
         phone: this.state.phone,
         address: this.state.address,
